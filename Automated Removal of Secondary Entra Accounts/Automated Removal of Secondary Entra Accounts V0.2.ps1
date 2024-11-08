@@ -11,8 +11,8 @@ When ran, this will locate secondary accounts and attempt to remove them. It may
 WARNING - This is still in beta testing!
 
 Known Issues:
-    -Odd behavior has been noticed when deletion occurs while some apps are open and using a given secondary profile. For example, if Teams is signed into and active on Secondary account X, which account X was also joined to Windows rather than only signed into Teams, and you attempt deletion, it may fail.
-
+	-Odd behavior has been noticed when deletion occurs while some apps are open and using a given secondary profile. For example, if Teams is signed into and active on Secondary account X, which account X was also joined to Windows rather than only signed into Teams, and you attempt deletion, it may fail.
+	-If an account is added to a device BUT not ever signed into any app (such as manually adding it via the settings menu but never actually using it in an app to authenticate) it may not be detected
 
 .NOTES
 Author:     Maxton Allen
