@@ -8,13 +8,16 @@ This should be deployed as only a detection script, use 64-bit mode, and run it 
 Author:     Maxton Allen
 Contact:    @AzureToTheMax
 Created:    2024-09-15
-Updated:    2024-11-04
-Version:    2.0
+Updated:    2024-11-08
+Version:    2.1
 Website:    AzureToTheMax.Net
 
 2.0
 This script was updated to now report what the secondary accounts are, rather than simply confirm if some account(s) appear(s) to be present.
 This was largely cannibalized from my Automated removal script.
+
+2.1
+Corrected a wrong Else loop on the user determination which was causing a null user to always be returned on physical devices. This had already been fixed in the full automatic cleanup but that change failed to be replicated in detection.
 
 #>
 
@@ -60,8 +63,6 @@ Function Get-CurrentUserSID{
 
 
 
-    } else {
-    $UserSid = $null
     }
 
     return $UserSid
