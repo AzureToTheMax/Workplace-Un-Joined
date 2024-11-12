@@ -2,7 +2,7 @@
 .SYNOPSIS
 This is the detection script of a Proactive Remediation designed to detect if a machine has existing Workplace join (Entra registered) accounts...
 
-This should be deployed as only a detection script, use 64-bit mode, and run it as the logged on credential.
+This should be deployed as only a detection script, use 64-bit mode, and do NOT run it as the logged onuser credentials (DO run it as System).
 
 .NOTES
 Author:     Maxton Allen
