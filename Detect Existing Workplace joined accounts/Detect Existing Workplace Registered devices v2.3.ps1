@@ -151,7 +151,7 @@ $RegKeys | ForEach-Object {
     #write-host "Tenant ID is $($StringTenantId)"
 
     #Locate the UPN for this account
-    $RegUPN = (Get-ChildItem "HKU:\$($UserSid)\Software\Microsoft\Windows NT\CurrentVersion\WorkplaceJoin\JoinInfo\*") | Get-ItemProperty -name 'TenantId' -ErrorAction SilentlyContinue
+    $RegUPN = (Get-ChildItem "HKU:\$($UserSid)\Software\Microsoft\Windows NT\CurrentVersion\WorkplaceJoin\JoinInfo\*" -ErrorAction SilentlyContinue) | Get-ItemProperty -name 'TenantId' -ErrorAction SilentlyContinue
     $RegUPNTempPath = $RegUPN | Where-Object {$_."TenantId" -eq "$StringTenantId"} | Select-Object PSChildName -ErrorAction SilentlyContinue
     #Store the paths we need to delete for later
     $StringUPN = Get-ItemProperty "HKU:\$($UserSid)\Software\Microsoft\Windows NT\CurrentVersion\WorkplaceJoin\JoinInfo\$($RegUPNTempPath.PSChildName)" -Name "UserEmail" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty UserEmail
